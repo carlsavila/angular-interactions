@@ -1,1 +1,97 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* My  global and import styles */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    /* styles */
+    --body-bg: rgb(253, 245, 230);
+    --body-hmf-bg: oldlace;
+    --global-bsdw-color: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+    --h1h2-color: rgb(92, 190, 6);
+    --h3h4-color: rgb(76, 157, 4);
+    --dfn-color: rgb(82, 88, 77);
+
+    --global-font:"Open Sans";
+    
+    /* form-kitten */
+    --bnt-dbled-color:grey;
+    --bnt-dbled-bg-color:antiquewhite;
+    --bnt-ebled-color:antiquewhite;
+    --bnt-ebled-bg-color:green;
+
+    --msgColorAlert:orange;
+    --msgColorValid:green;
+
+    --form_boder: 1px solid #ccc
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 1rem auto;
+    padding: 2rem;
+    font-family: var(--global-font);
+    background-color: var(--body-bg);
+    box-shadow: var(--global-bsdw-color);
+
+    h1,
+    h2 {
+        color: var(--h1h2-color);
+    }
+
+    h3,
+    h4 {
+        color: var(--h3h4-color);
+        padding: .5rem;
+    }
+
+    dfn {
+        color: var(--dfn-color);
+    }
+
+    header {
+        padding: .1rem;
+        margin: .5rem;
+        display: block;
+        text-align: center;
+        background-color: var(--body-hmf-bg);
+        box-shadow: var(--global-bsdw-color);
+    }
+
+    main {
+        padding: 0;
+        margin: .5rem;
+        text-align: center;
+
+    }
+
+    footer {
+        padding: 1rem;
+        margin: .5rem;
+        display: block;
+        text-align: center;
+        background-color: var(--body-hmf-bg);
+        box-shadow: var(--global-bsdw-color);
+    }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+    body {
+        margin: .1rem auto;
+        padding: .1rem;
+}
+    form {
+        fieldset {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

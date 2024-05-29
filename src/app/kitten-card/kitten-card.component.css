@@ -1,0 +1,33 @@
+.kittenCard {
+    margin: .5rem;
+    box-shadow: 2px 2px 50px 10px rgb(245, 236, 161);
+    border-radius: 1% 30% 50% 70%;
+    width: 10rem;
+    height: 100%;
+
+    img {
+        border: 1px;
+        border-radius: 1% 30% 50% 90%;
+        width: 100%;
+    }
+
+    span {
+        visibility: hidden;
+        font-size: .2rem;
+    }
+    
+    img:hover{
+        width: 20rem;
+        transition: width 5s linear 0;
+    }
+    :hover+span {
+        width: 20rem;
+        visibility: visible;
+        font-size: 1rem;
+    }
+
+    .pem {
+        color: rgb(176, 45, 73); 
+        font-weight: bold;
+    }
+}

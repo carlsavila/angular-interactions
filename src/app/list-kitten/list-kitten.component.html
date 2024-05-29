@@ -1,0 +1,36 @@
+<main class="grid-container">
+    <section class="grid-itList">
+        <h3>Chatons disponibles</h3>
+
+        <!--<button (click)="pushKittenForTest()"> ajouter</button>-->
+        <div class="grid-itList-CardsContainer">
+
+            @for (kitten of availableKittens; track $index) {
+            <div class="grid-itList-CardContainer">
+                <div>
+                    <a (click)="sendAdoptedKittenToUser(kitten.id)">
+                        <!-- Card @Input -->
+                        <app-kitten-card [kittenCard]="kitten"></app-kitten-card>
+                        <!-- Kitten message to show -->
+                        <p><em>Un click </em>😁
+                            <em> et je suis à toi</em> 🥰💞💘
+                        </p>
+                    </a>
+                </div>
+            </div>
+            }
+        </div>
+
+    </section>
+
+    <section class="grid-itUser">
+        <div class="grid-itUser-user-kitten-Container">
+            <app-user-kitten [userAdoptedKittenList]="userAdoptedKittens"></app-user-kitten>
+        </div>
+    </section>
+
+    <section class="grid-itForm">
+        <app-create-kitten (createKittenEmitter)="addNewReceivedKitten($event)">
+        </app-create-kitten>
+    </section>
+</main>

@@ -1,0 +1,111 @@
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'list list user'
+    'list list user'
+    'list list user'
+    'form form user'
+    'form form user';
+  gap: 2px;
+  padding: .5rem;
+  margin: 0;
+}
+
+.grid-itList {
+  grid-area: list;
+  padding-bottom: 1rem;
+  box-shadow: var(--global-bsdw-color);
+  margin: 0 auto;
+  
+  border-radius: 10px;
+  width: 100%;
+  
+
+  .grid-itList-CardsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 2px;
+    gap: 2px;
+    border-radius: 10px;
+    background-color: rgb(134, 56, 212);
+  }
+
+  .grid-itList-CardContainer {
+    padding: 2px;
+    width: 12rem;
+    max-width: 22rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .grid-itList-CardContainer:hover {
+    width: 22rem;
+    height: fit-content;
+    box-shadow: var(--global-bsdw-color);
+    transition: all 1s linear;
+  }
+
+}
+
+.grid-itUser {
+  grid-area: user;
+  background-color: var(--body-hmf-bg);
+  box-shadow: var(--global-bsdw-color);
+
+
+  .grid-itUser-user-kitten-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+  }
+}
+
+.grid-itForm {
+  grid-area: form;
+  background-color: var(--body-hmf-bg);
+  box-shadow: var(--global-bsdw-color);
+}
+
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      'list'
+      'user'
+      'form';
+  }
+
+  .grid-itList {
+    align-items: center;
+    justify-content: center;
+
+    .grid-itList-CardsContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .grid-itList-CardContainer {
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  form {
+    fieldset {
+      display: flex;
+      flex-direction: column;
+
+      input,
+      label {
+        width: 15rem;
+      }
+    }
+  }
+}
